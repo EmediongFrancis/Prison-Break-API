@@ -11,17 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Prison Break API
-        uses: actions/checkout@v2
+        uses: appleboy/ssh-action@v0.1.2
         with:
           host: '${{secrets.HOST}}'
           key: '${{secrets.KEY}}'
           username: '${{secrets.USER}}'
           script: |
-
             mkdir Portfolio-Project
-
             cd Portfolio-Project
-
             git clone git@github.com:EmediongFrancis/Prison-Break-API.git
-
             echo "Deployment Successful!"
