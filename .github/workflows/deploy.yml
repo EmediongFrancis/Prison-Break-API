@@ -1,43 +1,27 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Deploy to DigitalOcean
-
-# Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+'on':
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    branches:
+      - main
 jobs:
-  # This workflow contains a single job called "build"
   deploy:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Deploy Prison Break API
-      
         uses: actions/checkout@v2
-        
         with:
-        
-          host: ${{secrets.HOST}}
-          
-          key: ${{secrets.KEY}}
-          
-          username: ${{secrets.USER}}
-          
+          host: '${{secrets.HOST}}'
+          key: '${{secrets.KEY}}'
+          username: '${{secrets.USER}}'
           script: |
-          
+
             mkdir Portfolio-Project
-            
+
             cd Portfolio-Project
-            
+
             git clone git@github.com:EmediongFrancis/Prison-Break-API.git
-            
+
             echo "Deployment Successful!"
