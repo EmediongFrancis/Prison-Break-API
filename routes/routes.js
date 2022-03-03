@@ -1,4 +1,4 @@
-const path = require('path/posix');
+const path = require('path-posix');
 const pool = require('../data/config');
 const router = app => {
   // Display welcome message on the root
