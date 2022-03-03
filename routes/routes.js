@@ -1,15 +1,14 @@
+const path = require('path/posix');
 const pool = require('../data/config');
 const router = app => {
   // Display welcome message on the root
   app.get('/', (request, response) => {
-    response.send({
-      message: 'Welcome to the Node.js Express REST API!'
-    });
+    response.sendFile(path.join(__dirname, '../frontend/html/LandingPage.html'));
   });
 
   // Display all users
-  app.get('/users', (request, response) => {
-    pool.query('SELECT * FROM users', (error, result) => {
+  app.get('/characters/', (request, response) => {
+    pool.query('SELECT * FROM characters', (error, result) => {
       if (error) throw error;
 
       response.send(result);
@@ -17,10 +16,10 @@ const router = app => {
   });
 
   // Display a single user by ID
-  app.get('/users/:id', (request, response) => {
+  app.get('/characters/:id', (request, response) => {
     const id = request.params.id;
 
-    pool.query('SELECT * FROM users WHERE id = ?', id, (error, result) => {
+    pool.query('SELECT * FROM characters WHERE id = ?', id, (error, result) => {
       if (error) throw error;
 
       response.send(result);
@@ -28,11 +27,11 @@ const router = app => {
   });
 
   // Add a new user
-  app.post('/users', (request, response) => {
-    pool.query('INSERT INTO users SET ?', request.body, (error, result) => {
+  app.post('/characters', (request, response) => {
+    pool.query('INSERT INTO characters SET ?', request.body, (error, result) => {
       if (error) throw error;
 
-      response.status(201).send(`User added with ID: ${result.insertId}`);
+      response.status(201).send(`Character added with ID: ${result.insertId}`);
     });
   });
 
