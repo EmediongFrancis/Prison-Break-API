@@ -34,7 +34,7 @@ const router = app => {
     pool.query('SELECT * FROM locations', (error, result) => {
       if (error) throw error;
 
-      response.send(resilt);
+      response.send(result);
     });
   });
 
