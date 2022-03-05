@@ -1,6 +1,11 @@
+
+const { response } = require('express');
+const { request } = require('http');
 const path = require('path');
 const pool = require('../data/config');
+
 const router = app => {
+
   // Display welcome message on the root
   app.get('/', (request, response) => {
     response.sendFile(path.join(__dirname, '../frontend/html/LandingPage.html'));
@@ -9,6 +14,33 @@ const router = app => {
   // Display all characters
   app.get('/api/characters/', (request, response) => {
     pool.query('SELECT * FROM characters', (error, result) => {
+      if (error) throw error;
+
+      response.send(result);
+    });
+  });
+
+  // Display all episodes
+  app.get('/api/episodes/', (request, response) => {
+    pool.query('SELECT * FROM episodes', (error, result) => {
+      if (error) throw error;
+
+      response.send(result);
+    });
+  });
+
+  // Display all locations
+  app.get('/api/locations', (request, response) => {
+    pool.query('SELECT * FROM locations', (error, result) => {
+      if (error) throw error;
+
+      response.send(resilt);
+    });
+  });
+
+  // Display all codes
+  app.get('/api/codes/', (request, response) => {
+    pool.query('SELECT * FROM codes', (error, result) => {
       if (error) throw error;
 
       response.send(result);
