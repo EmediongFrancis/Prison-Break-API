@@ -3,7 +3,7 @@ const config = {
   host: 'localhost',
   user: 'root',
   password: 'prisonbreak',
-  database: 'api'
+  database: 'PrisonBreakAPI'
 };
 
 const pool = mysql.createPool(config);
