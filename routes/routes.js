@@ -15,7 +15,7 @@ const router = app => {
     });
   });
 
-  // Display a single user by ID
+  // Display a single character by ID
   app.get('/characters/:id', (request, response) => {
     const id = request.params.id;
 
@@ -26,7 +26,7 @@ const router = app => {
     });
   });
 
-  // Add a new user
+  // Add a new character
   app.post('/characters', (request, response) => {
     pool.query('INSERT INTO characters SET ?', request.body, (error, result) => {
       if (error) throw error;
@@ -35,24 +35,24 @@ const router = app => {
     });
   });
 
-  // Update an existing user
-  app.put('/users/:id', (request, response) => {
+  // Update an existing character
+  app.put('/characters/:id', (request, response) => {
     const id = request.params.id;
 
-    pool.query('UPDATE users SET ? WHERE id = ?', [request.body, id], (error, result) => {
+    pool.query('UPDATE characters SET ? WHERE id = ?', [request.body, id], (error, result) => {
       if (error) throw error;
 
-      response.send('User updated successfully.');
+      response.send('Character updated successfully.');
     });
   });
 
-  // Delete a user
-  app.delete('/users/:id', (request, response) => {
+  // Delete a character
+  app.delete('/characters/:id', (request, response) => {
     const id = request.params.id;
 
-    pool.query('DELETE FROM users WHERE id = ?', id, (error, result) => {
+    pool.query('DELETE FROM characters WHERE id = ?', id, (error, result) => {
       if (error) throw error;
-      response.send('User deleted.');
+      response.send('Character deleted.');
     });
   });
 };
