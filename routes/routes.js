@@ -16,7 +16,7 @@ const router = app => {
   });
 
   // Display a single character by ID
-  app.get('/characters/:id', (request, response) => {
+  app.get('/api/characters/:id', (request, response) => {
     const id = request.params.id;
 
     pool.query('SELECT * FROM characters WHERE id = ?', id, (error, result) => {
@@ -27,7 +27,7 @@ const router = app => {
   });
 
   // Add a new character
-  app.post('/characters', (request, response) => {
+  app.post('/api/characters', (request, response) => {
     pool.query('INSERT INTO characters SET ?', request.body, (error, result) => {
       if (error) throw error;
 
@@ -36,7 +36,7 @@ const router = app => {
   });
 
   // Update an existing character
-  app.put('/characters/:id', (request, response) => {
+  app.put('/api/characters/:id', (request, response) => {
     const id = request.params.id;
 
     pool.query('UPDATE characters SET ? WHERE id = ?', [request.body, id], (error, result) => {
@@ -47,7 +47,7 @@ const router = app => {
   });
 
   // Delete a character
-  app.delete('/characters/:id', (request, response) => {
+  app.delete('/api/characters/:id', (request, response) => {
     const id = request.params.id;
 
     pool.query('DELETE FROM characters WHERE id = ?', id, (error, result) => {
