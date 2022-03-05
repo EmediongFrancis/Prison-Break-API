@@ -58,6 +58,17 @@ const router = app => {
     });
   });
 
+  // Display a single code by ID
+  app.get('/api/codes/:id', (request, response) => {
+    const id = request.params.id;
+
+    pool.query('SELECT * FROM codes WHERE id = ?', id, (error, result) => {
+      if (error) throw error;
+      
+      response.send(result);
+    });
+  });
+
   // Add a new character
   app.post('/api/characters', (request, response) => {
     pool.query('INSERT INTO characters SET ?', request.body, (error, result) => {
