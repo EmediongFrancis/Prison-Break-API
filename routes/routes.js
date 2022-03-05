@@ -6,8 +6,8 @@ const router = app => {
     response.sendFile(path.join(__dirname, '../frontend/html/LandingPage.html'));
   });
 
-  // Display all users
-  app.get('/characters/', (request, response) => {
+  // Display all characters
+  app.get('/api/characters/', (request, response) => {
     pool.query('SELECT * FROM characters', (error, result) => {
       if (error) throw error;
 
