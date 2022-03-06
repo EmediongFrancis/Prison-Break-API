@@ -2,6 +2,7 @@
 const { response } = require('express');
 const { request } = require('http');
 const path = require('path');
+const { stripVTControlCharacters } = require('util');
 const pool = require('../data/config');
 
 const router = app => {
@@ -13,11 +14,7 @@ const router = app => {
 
   // Display all endpoints
   app.get('/api/', (request, response) => {
-    pool.query('SHOW TABLES', (error, result) => {
-      if (error) throw error;
-
-      response.send(result);
-    });
+    response.sendFile(path.join(__dirname, '../frontend/html/Endpoints.html'));
   });
 
   // Display all characters
