@@ -11,9 +11,29 @@ const router = app => {
     response.sendFile(path.join(__dirname, '../frontend/html/LandingPage.html'));
   });
 
+  // Display all endpoints
+  app.get('/api/', (request, response) => {
+    pool.query('SHOW TABLES', (error, result) => {
+      if (error) throw error;
+
+      response.send(result);
+    });
+  });
+
   // Display all characters
   app.get('/api/characters/', (request, response) => {
     pool.query('SELECT * FROM characters', (error, result) => {
+      if (error) throw error;
+
+      response.send(result);
+    });
+  });
+
+  // Display a single character by ID
+  app.get('/api/characters/:id', (request, response) => {
+    const id = request.params.id;
+
+    pool.query('SELECT * FROM characters WHERE id = ?', id, (error, result) => {
       if (error) throw error;
 
       response.send(result);
@@ -29,6 +49,17 @@ const router = app => {
     });
   });
 
+  // Display a single episode by ID
+  app.get('/api/episodes/:id', (request, response) => {
+    const id = request.params.id;
+
+    pool.query('SELECT * FROM episodes WHERE id = ?', id, (error, result) => {
+      if (error) throw error;
+
+      response.send(result);
+    });
+  });
+
   // Display all locations
   app.get('/api/locations', (request, response) => {
     pool.query('SELECT * FROM locations', (error, result) => {
@@ -38,20 +69,20 @@ const router = app => {
     });
   });
 
-  // Display all codes
-  app.get('/api/codes/', (request, response) => {
-    pool.query('SELECT * FROM codes', (error, result) => {
+  // Display a single location by ID
+  app.get('/api/locations/:id', (request, response) => {
+    const id = request.params.id;
+
+    pool.query('SELECT * FROM locations WHERE id = ?', id, (error, result) => {
       if (error) throw error;
 
       response.send(result);
     });
   });
 
-  // Display a single character by ID
-  app.get('/api/characters/:id', (request, response) => {
-    const id = request.params.id;
-
-    pool.query('SELECT * FROM characters WHERE id = ?', id, (error, result) => {
+  // Display all codes
+  app.get('/api/codes/', (request, response) => {
+    pool.query('SELECT * FROM codes', (error, result) => {
       if (error) throw error;
 
       response.send(result);
