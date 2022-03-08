@@ -3,7 +3,7 @@ const { response } = require('express');
 const { request } = require('http');
 const path = require('path');
 const { stripVTControlCharacters } = require('util');
-const pool = require('../data/config');
+const pool = require('../backend/config');
 
 const router = app => {
 
