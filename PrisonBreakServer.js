@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const bodyParser = require('body-parser');
 const routes = require('./routes/routes');
 const port = 3000;
@@ -8,6 +9,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 routes(app);
 
