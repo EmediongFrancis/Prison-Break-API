@@ -1,0 +1,125 @@
+openapi: '3.0.2'
+info:
+  title: Prison Break API Documentation
+  version: '1.0'
+servers:
+  - url: https://prisonbreakapi.me/api/
+
+paths:
+  /episodes:
+    get:
+      summary: Get all episodes.
+      description: Fetches all episodes from the database.
+      responses:
+        '200':
+          description: Data fetched successfully.
+        '404':
+          description: Data not found.
+
+  /episodes/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: 
+          type: integer
+          minimum: 1
+          maximum: 11
+
+    get:
+      summary: Get a single episode by id.
+      description: Fetches a single episode from the database by adding the id to the base URL.
+      responses:
+        '200':
+          description: Data fetched successfully.
+        '404':
+          description: Data not found.
+
+
+
+  /characters:
+    get:
+      summary: Get all characters.
+      description: Fetches all characters from database.
+      responses:
+        '200':
+          description: Data fetched successfully.
+        '404':
+          description: Data not found.
+
+  /characters/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: 
+          type: integer
+          minimum: 1
+          maximum: 11
+
+    get:
+      summary: Get a single character by id.
+      description: Fetches a single character from the database by adding the id to the base URL.
+      responses:
+        '200':
+          description: Data fetched successfully.
+        '404':
+          description: Data not found.
+
+  /locations:
+    get:
+      summary: Get all locations.
+      description: Fetches all locations from database.
+      responses:
+        '200':
+          description: Data fetched successfully.
+        '404':
+          description: Data not found.
+
+  /locations/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: 
+          type: integer
+          minimum: 1
+          maximum: 8
+
+    get:
+      summary: Get a single location by id.
+      description: Fetches a single location from the database by adding the id to the base URL.
+      responses:
+        '200':
+          description: Data fetched successfully.
+        '404':
+          description: Data not found.
+
+  /codes:
+    get:
+      summary: Get all codes.
+      description: Fethces all codes from the database.
+      responses:
+        '200':
+          description: Data fetched successfully.
+        '404':
+          description: Data not found.
+
+  /codes/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema: 
+          type: integer
+          minimum: 1
+          maximum: 11
+
+    get:
+      summary: Get a single code by id.
+      description: Fetches a single code from the database by adding the id to the base URL.
+      responses:
+        '200':
+          description: Data fetched successfully.
+        '404':
+          description: Data not found.

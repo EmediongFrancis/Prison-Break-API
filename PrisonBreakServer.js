@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const routes = require('./routes/routes');
+const cors = require('cors');
 const port = 3000;
 
 app.use(bodyParser.json());
@@ -11,6 +12,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(express.static(path.join(__dirname, 'frontend')));
+app.use(cors({
+    origin: '*'
+}));
 
 routes(app);
 
