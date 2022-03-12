@@ -1,9 +1,14 @@
 {
   "dependencies": {
+    "@wesleytodd/openapi": "^0.1.0",
     "cors": "^2.8.5",
     "express": "^4.17.3",
+    "express-openapi": "^10.1.0",
     "mysql": "^2.18.1",
+    "openapi-browser": "^0.3.1",
     "path-posix": "^1.0.0",
-    "serve-static": "^1.14.2"
+    "readmeio": "^5.1.0",
+    "serve-static": "^1.14.2",
+    "swagger-ui-express": "^4.3.0"
   }
 }
