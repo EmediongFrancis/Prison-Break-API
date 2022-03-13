@@ -72,8 +72,6 @@ paths:
         '502':
           description: Server is down.
 
-
-
   /characters:
     get:
       summary: Get all characters.
@@ -85,6 +83,52 @@ paths:
           description: Data not found.
         '502':
           description: Server is down.
+
+    post:
+      summary: Add a character.
+      description: Uses data from message body and adds a new character.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: 
+              type: object
+              required:
+                - name
+                - story
+                - quotes
+                - firstAppearance
+                - lastAppearance
+              properties:
+                name:
+                  type: string
+                nickname:
+                  type: string
+                story:
+                  type: string
+                abilities:
+                  type: string
+                quotes:
+                  type: string
+                crimes:
+                  type: string
+                IncarceratedIn:
+                  type: string
+                firstAppearance:
+                  type: string
+                lastAppearance:
+                  type: string
+                kils:
+                  type: string
+      responses:
+        '201':
+          description: Data added successfully.
+        '400':
+          description: Bad request.
+        '401':
+          description: Not authorized.
+        '502':
+          description: You probably submitted an empty form.
 
   /characters/{id}:
     parameters:
