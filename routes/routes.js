@@ -106,6 +106,33 @@ const router = app => {
     });
   });
 
+  // Add a new episode
+  app.post('/api/episodes', (requset, response) => {
+    pool.query('INSERT INTO episodes SET ?', request.body, (error, result) => {
+      if (error) throw error;
+
+      response.status(201).send(`Episode added with ID: ${result.insertId}`);
+    });
+  });
+
+  // Add a new location
+  app.post('/api/locations', (requset, response) => {
+    pool.query('INSERT INTO locations SET ?', request.body, (error, result) => {
+      if (error) throw error;
+
+      response.status(201).send(`Location added with ID: ${result.insertId}`);
+    });
+  });
+
+  // Add a new code
+  app.post('/api/codes', (requset, response) => {
+    pool.query('INSERT INTO codes SET ?', request.body, (error, result) => {
+      if (error) throw error;
+
+      response.status(201).send(`Code added with ID: ${result.insertId}`);
+    });
+  });
+
   // Update an existing character
   app.put('/api/characters/:id', (request, response) => {
     const id = request.params.id;

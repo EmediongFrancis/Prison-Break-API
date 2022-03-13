@@ -18,6 +18,37 @@ paths:
         '502':
           description: Server is down.
 
+    post:
+      summary: Add an episode.
+      description: Uses data from message body and adds a new episode.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: 
+              type: object
+              required:
+                - name
+                - position
+                - mainCast
+                - summary
+              properties:
+                name:
+                  type: string
+                position:
+                  type: string
+                mainCast:
+                  type: string
+                summary:
+                  type: string
+      responses:
+        '201':
+          description: Data added successfully.
+        '400':
+          description: Bad request.
+        '401':
+          description: Not authorized.
+
   /episodes/{id}:
     parameters:
       - name: id
