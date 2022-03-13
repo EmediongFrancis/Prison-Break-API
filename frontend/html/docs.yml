@@ -48,6 +48,8 @@ paths:
           description: Bad request.
         '401':
           description: Not authorized.
+        '502':
+          description: You probably submitted an empty form.
 
   /episodes/{id}:
     parameters:
