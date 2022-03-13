@@ -129,7 +129,7 @@ paths:
           description: Not authorized.
         '502':
           description: You probably submitted an empty form.
-          
+
 
   /characters/{id}:
     parameters:
@@ -163,6 +163,36 @@ paths:
           description: Data not found.
         '502':
           description: Server is down.
+
+    post:
+      summary: Add a location.
+      description: Uses data from message body and adds a new location.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: 
+              type: object
+              required:
+                - name
+                - info
+                - history
+              properties:
+                name:
+                  type: string
+                info:
+                  type: string
+                history:
+                  type: string
+      responses:
+        '201':
+          description: Data added successfully.
+        '400':
+          description: Bad request.
+        '401':
+          description: Not authorized.
+        '502':
+          description: You probably submitted an empty form.
 
   /locations/{id}:
     parameters:
