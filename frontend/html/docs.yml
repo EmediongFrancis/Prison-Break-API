@@ -129,6 +129,7 @@ paths:
           description: Not authorized.
         '502':
           description: You probably submitted an empty form.
+          
 
   /characters/{id}:
     parameters:
