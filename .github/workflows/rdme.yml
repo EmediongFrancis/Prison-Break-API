@@ -19,4 +19,4 @@ jobs:
         # Docs: https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#example-using-versioned-actions
         uses: readmeio/rdme@7.0.0
         with:
-          rdme: openapi frontend/html/docs.yml --key=KoEzSTSAJ6jDmijMZLL6PP65QRG4GGSh --id=622ce3b465f44900a0c1a716
+          rdme: openapi frontend/html/docs.yml --key=${{ secrets.RDME_API_KEY }} --id=${{ secrets.RDME_ID }}
