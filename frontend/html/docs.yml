@@ -227,6 +227,33 @@ paths:
         '502':
           description: Server is down.
 
+    post:
+      summary: Add a code.
+      description: Uses data from message body and adds a new code.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: 
+              type: object
+              required:
+                - codeName
+                - details
+              properties:
+                codeName:
+                  type: string
+                details:
+                  type: string
+      responses:
+        '201':
+          description: Data added successfully.
+        '400':
+          description: Bad request.
+        '401':
+          description: Not authorized.
+        '502':
+          description: You probably submitted an empty form.
+
   /codes/{id}:
     parameters:
       - name: id
