@@ -191,7 +191,7 @@ const router = app => {
 app.delete('/api/episodes/:id', (request, response) => {
   const id = request.params.id;
 
-  pool.query('DELETE FROM episodes WHERE id = ?', (error, result) => {
+  pool.query('DELETE FROM episodes WHERE id = ?', id, (error, result) => {
     if (error) throw error;
     response.send('Episode deleted.');
   });
@@ -201,7 +201,7 @@ app.delete('/api/episodes/:id', (request, response) => {
 app.delete('/api/locations/:id', (request, response) => {
   const id = request.params.id;
 
-  pool.query('DELETE FROM locations WHERE id = ?', (error, result) => {
+  pool.query('DELETE FROM locations WHERE id = ?', id, (error, result) => {
     if (error) throw error;
     response.send('Location deleted.');
   });
@@ -211,7 +211,7 @@ app.delete('/api/locations/:id', (request, response) => {
 app.delete('/api/codes/:id', (request, response) => {
   const id = request.params.id;
 
-  pool.query('DELETE FROM codes WHERE id = ?', (error, result) => {
+  pool.query('DELETE FROM codes WHERE id = ?', id, (error, result) => {
     if (error) throw error;
     response.send('Code deleted.');
   });
