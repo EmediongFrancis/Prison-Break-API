@@ -10,6 +10,7 @@ const router = app => {
   app.get('/', (request, response) => {
     response.sendFile(path.join(__dirname, '../frontend/html/LandingPage.html'));
   });
+}
 
   // Display all endpoints
   app.get('/api/', (request, response) => {
@@ -143,6 +144,39 @@ const router = app => {
     });
   });
 
+  // Update an existing episode
+  app.put('/api/episodes/:id', (request, response) => {
+    const id = request.params.id;
+
+    pool.query('UPDATE episodes SET ? WHERE id =?', [request.body, id], (error, result) => {
+      if (error) throw error;
+
+      response.send('Episode updated successfully.');
+    });
+  });
+
+  // Update an existing location
+  app.put('/api/locations/:id', (request, response) => {
+    const id = request.params.id;
+
+    pool.query('UPDATE locations SET ? WHERE id =?', [request.body, id], (error, result) => {
+      if (error) throw error;
+
+      response.send('Location updated successfully.');
+    });
+  });
+
+   // Update an existing code
+  app.put('/api/codes/:id', (request, response) => {
+    const id = request.params.id;
+
+    pool.query('UPDATE codes SET ? WHERE id =?', [request.body, id], (error, result) => {
+      if (error) throw error;
+
+      response.send('Code updated successfully.');
+    });
+  });
+
   // Delete a character
   app.delete('/api/characters/:id', (request, response) => {
     const id = request.params.id;
@@ -152,7 +186,36 @@ const router = app => {
       response.send('Character deleted.');
     });
   });
-};
+
+// Delete an episode
+app.delete('/api/episodes/:id', (request, response) => {
+  const id = request.params.id;
+
+  pool.query('DELETE FROM episodes WHERE id = ?', (error, result) => {
+    if (error) throw error;
+    response.send('Episode deleted.');
+  });
+});
+
+// Delete a location
+app.delete('/api/locations/:id', (request, response) => {
+  const id = request.params.id;
+
+  pool.query('DELETE FROM locations WHERE id = ?', (error, result) => {
+    if (error) throw error;
+    response.send('Location deleted.');
+  });
+});
+
+// Delete a code
+app.delete('/api/codes/:id', (request, response) => {
+  const id = request.params.id;
+
+  pool.query('DELETE FROM codes WHERE id = ?', (error, result) => {
+    if (error) throw error;
+    response.send('Code deleted.');
+  });
+});
 
 // Export the router
 module.exports = router;
