@@ -10,7 +10,6 @@ const router = app => {
   app.get('/', (request, response) => {
     response.sendFile(path.join(__dirname, '../frontend/html/LandingPage.html'));
   });
-}
 
   // Display all endpoints
   app.get('/api/', (request, response) => {
@@ -218,4 +217,4 @@ app.delete('/api/codes/:id', (request, response) => {
 });
 
 // Export the router
-module.exports = router;
+module.exports = router};
