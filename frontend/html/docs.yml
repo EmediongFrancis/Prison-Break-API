@@ -100,6 +100,7 @@ paths:
         '502':
           description: You probably submitted an empty form.
 
+
     delete:
       summary: Delete episode.
       description: Deletes a single episode by id.
