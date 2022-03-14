@@ -72,6 +72,34 @@ paths:
         '502':
           description: Server is down.
 
+    put:
+      summary: Update a single episode by id.
+      description: Uses data from message body to update episode.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                position:
+                  type: string
+                mainCast:
+                  type: string
+                summary:
+                  type: string
+      responses:
+        '201':
+          description: Data updated successfully.
+        '400':
+          description: Bad request.
+        '401':
+          description: Not authorized.
+        '502':
+          description: You probably submitted an empty form.
+
   /characters:
     get:
       summary: Get all characters.
@@ -119,7 +147,7 @@ paths:
                 lastAppearance:
                   type: string
                 kils:
-                  type: string
+                  type: integer
       responses:
         '201':
           description: Data added successfully.
@@ -151,6 +179,46 @@ paths:
           description: Data not found.
         '502':
           description: Server is down.
+
+    put:
+      summary: Update a single character by id.
+      description: Uses data from message body to update character.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                nickname:
+                  type: string
+                story:
+                  type: string
+                abilities:
+                  type: string
+                quotes:
+                  type: string
+                crimes:
+                  type: string
+                IncarceratedIn:
+                  type: string
+                firstAppearance:
+                  type: string
+                lastAppearance:
+                  type: string
+                kils:
+                  type: integer
+      responses:
+        '201':
+          description: Data updated successfully.
+        '400':
+          description: Bad request.
+        '401':
+          description: Not authorized.
+        '502':
+          description: You probably submitted an empty form.
 
   /locations:
     get:
@@ -215,6 +283,32 @@ paths:
         '502':
           description: Server is down.
 
+    put:
+      summary: Update a single location by id.
+      description: Uses data from message body to update location.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                info:
+                  type: string
+                history:
+                  type: string
+      responses:
+        '201':
+          description: Data updated successfully.
+        '400':
+          description: Bad request.
+        '401':
+          description: Not authorized.
+        '502':
+          description: You probably submitted an empty form.
+
   /codes:
     get:
       summary: Get all codes.
@@ -274,3 +368,27 @@ paths:
           description: Data not found.
         '502':
           description: Server is down.
+
+    put:
+      summary: Update a single code by id.
+      description: Uses data from message body to update code.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codeName:
+                  type: string
+                details:
+                  type: string
+      responses:
+        '201':
+          description: Data updated successfully.
+        '400':
+          description: Bad request.
+        '401':
+          description: Not authorized.
+        '502':
+          description: You probably submitted an empty form.
