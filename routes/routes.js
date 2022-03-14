@@ -215,6 +215,7 @@ app.delete('/api/codes/:id', (request, response) => {
     response.send('Code deleted.');
   });
 });
+};
 
 // Export the router
-module.exports = router};
+module.exports = router;
