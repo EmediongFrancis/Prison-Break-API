@@ -100,6 +100,17 @@ paths:
         '502':
           description: You probably submitted an empty form.
 
+    delete:
+      summary: Delete episode.
+      description: Deletes a single episode by id.
+      responses:
+        '200':
+          description: Data deleted successfully.
+        '404':
+          description: Data not found.
+        '502':
+          description: Server is down.
+
   /characters:
     get:
       summary: Get all characters.
@@ -220,6 +231,17 @@ paths:
         '502':
           description: You probably submitted an empty form.
 
+    delete:
+      summary: Delete character.
+      description: Deletes a single character by id.
+      responses:
+        '200':
+          description: Data deleted successfully.
+        '404':
+          description: Data not found.
+        '502':
+          description: Server is down.
+
   /locations:
     get:
       summary: Get all locations.
@@ -309,6 +331,17 @@ paths:
         '502':
           description: You probably submitted an empty form.
 
+    delete:
+      summary: Delete location.
+      description: Deletes a single location by id.
+      responses:
+        '200':
+          description: Data deleted successfully.
+        '404':
+          description: Data not found.
+        '502':
+          description: Server is down.
+
   /codes:
     get:
       summary: Get all codes.
@@ -392,3 +425,14 @@ paths:
           description: Not authorized.
         '502':
           description: You probably submitted an empty form.
+
+    delete:
+      summary: Delete code.
+      description: Deletes a single code by id.
+      responses:
+        '200':
+          description: Data deleted successfully.
+        '404':
+          description: Data not found.
+        '502':
+          description: Server is down.
