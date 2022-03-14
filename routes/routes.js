@@ -2,7 +2,6 @@
 const { response } = require('express');
 const { request } = require('http');
 const path = require('path');
-const { stripVTControlCharacters } = require('util');
 const pool = require('../backend/config');
 
 const router = app => {
@@ -107,7 +106,7 @@ const router = app => {
   });
 
   // Add a new episode
-  app.post('/api/episodes', (requset, response) => {
+  app.post('/api/episodes', (request, response) => {
     pool.query('INSERT INTO episodes SET ?', request.body, (error, result) => {
       if (error) throw error;
 
@@ -116,7 +115,7 @@ const router = app => {
   });
 
   // Add a new location
-  app.post('/api/locations', (requset, response) => {
+  app.post('/api/locations', (request, response) => {
     pool.query('INSERT INTO locations SET ?', request.body, (error, result) => {
       if (error) throw error;
 
@@ -125,7 +124,7 @@ const router = app => {
   });
 
   // Add a new code
-  app.post('/api/codes', (requset, response) => {
+  app.post('/api/codes', (request, response) => {
     pool.query('INSERT INTO codes SET ?', request.body, (error, result) => {
       if (error) throw error;
 
