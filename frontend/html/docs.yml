@@ -159,7 +159,7 @@ paths:
                 lastAppearance:
                   type: string
                 kils:
-                  type: integer
+                  type: string
       responses:
         '201':
           description: Data added successfully.
