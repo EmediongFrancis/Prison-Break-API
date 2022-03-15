@@ -158,8 +158,8 @@ paths:
                   type: string
                 lastAppearance:
                   type: string
-                kils:
-                  type: string
+                kills:
+                  type: integer
       responses:
         '201':
           description: Data added successfully.
@@ -220,8 +220,8 @@ paths:
                   type: string
                 lastAppearance:
                   type: string
-                kils:
-                  type: string
+                kills:
+                  type: integer
       responses:
         '201':
           description: Data updated successfully.
