@@ -49,7 +49,7 @@ paths:
         '401':
           description: Not authorized.
         '502':
-          description: You probably submitted an empty form.
+          description: You probably submitted an empty message body or typed data incorrectly.
 
   /episodes/{id}:
     parameters:
@@ -98,7 +98,7 @@ paths:
         '401':
           description: Not authorized.
         '502':
-          description: You probably submitted an empty form.
+          description: You probably submitted an empty message body or typed data incorrectly.
 
 
     delete:
@@ -168,7 +168,7 @@ paths:
         '401':
           description: Not authorized.
         '502':
-          description: You probably submitted an empty form.
+          description: You probably submitted an empty message body or typed data incorrectly.
 
 
   /characters/{id}:
@@ -230,7 +230,7 @@ paths:
         '401':
           description: Not authorized.
         '502':
-          description: You probably submitted an empty form.
+          description: You probably submitted an empty message body or typed data incorrectly.
 
     delete:
       summary: Delete character.
@@ -283,7 +283,7 @@ paths:
         '401':
           description: Not authorized.
         '502':
-          description: You probably submitted an empty form.
+          description: You probably submitted an empty message body or typed data incorrectly.
 
   /locations/{id}:
     parameters:
@@ -330,7 +330,7 @@ paths:
         '401':
           description: Not authorized.
         '502':
-          description: You probably submitted an empty form.
+          description: You probably submitted an empty message body or typed data incorrectly.
 
     delete:
       summary: Delete location.
@@ -380,7 +380,7 @@ paths:
         '401':
           description: Not authorized.
         '502':
-          description: You probably submitted an empty form.
+          description: You probably submitted an empty message body or typed data incorrectly.
 
   /codes/{id}:
     parameters:
@@ -425,7 +425,7 @@ paths:
         '401':
           description: Not authorized.
         '502':
-          description: You probably submitted an empty form.
+          description: You probably submitted an empty message body or typed data incorrectly.
 
     delete:
       summary: Delete code.
