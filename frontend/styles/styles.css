@@ -1,5 +1,6 @@
 body {
    margin: 0px;
+   scroll-behavior: smooth;
 }
 
 header {
@@ -102,7 +103,7 @@ footer {
 .body {
    font-size: large;
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-   font-style: italic;
+   font-style: normal;
    margin-top: 0;
    background: #232b2b;
    padding: 8px;
@@ -124,6 +125,11 @@ footer {
   border-top-right-radius: 30px;
 }
 
+.characterCard:hover {
+   transform: scale(1.1);
+   cursor: pointer;
+}
+
 .characterCard {
    border-radius: 30px;
    height: 400px;
@@ -134,13 +140,14 @@ footer {
 
 .py-8 {
    padding: 8px 0px;
+   font-style: italic;
 }
 
 /* Clear floats after image containers */
 .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 @media (max-width: 500px) {
