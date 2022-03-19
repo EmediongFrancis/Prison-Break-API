@@ -11,7 +11,7 @@ header {
    left: 0;
    width: 100%;
    height: 60px;
-   background: #232b2b;
+   background: #151a1a;
 }
 
 footer {
@@ -22,7 +22,7 @@ footer {
    /* height:60px; */
   /* line-height: 30px;*/
    text-align: center;
-   background: #232b2b;
+   background: #151a1a;
 }
 
 .foot {
@@ -33,7 +33,7 @@ footer {
    /* height:60px; */
   /* line-height: 30px;*/
    text-align: center;
-   background: #232b2b;
+   background: #151a1a;
    position:fixed
 }
 
@@ -54,7 +54,7 @@ footer {
 
 .topnav {
     width: 25%;
-    background-color: #232b2b;
+    background-color: #151a1a;
     /* overflow: auto; */
     float: right;
     margin-top: 7px;
@@ -75,15 +75,17 @@ footer {
 
 
 .intro {
-   background: #A3C1AD;
+   background: #0d7057;
    /*font-size: large;*/
    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-   height: 260px;
+   height: 100%;
    width: 100%;
    margin-top: 50px;
    overflow: hidden;
    top: 30px;
 }
+
+
 .int {
    /* background: #A3C1AD; */
    /*font-size: large;*/
@@ -95,9 +97,14 @@ footer {
    overflow: hidden;
 }
 
+.intro h1 {
+   color: whitesmoke;
+}
+
 .intro h2 {
    padding: 8px;
    font-style: italic;
+   color: whitesmoke;
 }
 
 .body {
@@ -105,12 +112,18 @@ footer {
    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    font-style: normal;
    margin-top: 0;
-   background: #232b2b;
+   background: #151a1a;
    padding: 8px;
 }
 
-.body p {
-   font-size: larger;
+.body h1 {
+   color: whitesmoke;
+}
+
+.text {
+   color: whitesmoke;
+   padding: 2px;
+   padding-left: 4px;
 }
 
 /* Three image containers (use 25% for four, and 50% for two, etc) */
@@ -141,6 +154,7 @@ footer {
 .py-8 {
    padding: 8px 0px;
    font-style: italic;
+   color: whitesmoke;
 }
 
 /* Clear floats after image containers */
@@ -150,15 +164,26 @@ footer {
   justify-content: space-evenly;
 }
 
+.doclink {
+   text-decoration: none;
+   color: wheat;
+}
+
+figcaption {
+   color: whitesmoke;
+}
+
 @media (max-width: 500px) {
   .topnav > a > span {
     float: none;
     display: none;
   }
-  .intro h2 {
-     font-size: small;
-     color: black;
+
+  .get {
+     width: 100%;
+     height: 100%;
   }
+  
   .body p {
      font-size: medium;
      color: white;
@@ -178,5 +203,9 @@ footer {
   }
   .py-8 {
      color: white;
+  }
+
+  .intro {
+     height: 100%;
   }
 }
