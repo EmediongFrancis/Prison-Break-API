@@ -11,12 +11,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-
-app.use(
-  readme.metrics('KoEzSTSAJ6jDmijMZLL6PP65QRG4GGSh', () => ({
-    apiKey: '0a0730d-afd0-475d-8996-5a7dee004489'
-  })));
-
 app.use(express.static(path.join(__dirname, 'frontend')));
 app.use(cors({
   origin: '*'
