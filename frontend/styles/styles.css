@@ -136,6 +136,7 @@ footer {
   box-sizing: border-box;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+  transition: all .2s ease-in-out;
 }
 
 .characterCard:hover {
@@ -208,6 +209,10 @@ figcaption {
   .intro {
      height: 100%;
      font-size: x-small;
+  }
+
+  figcaption {
+     font-size: small;
   }
   
 }
