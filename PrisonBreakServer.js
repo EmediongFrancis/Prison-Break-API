@@ -1,3 +1,4 @@
+// Install necessary dependencies
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -7,10 +8,13 @@ const cors = require('cors');
 const readme = require('readmeio');
 const port = 3000;
 
+// Configure Express to parse json and urls
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+// Configure app to serve static files out of a directory
 app.use(express.static(path.join(__dirname, 'frontend')));
 app.use(cors({
   origin: '*'
@@ -18,6 +22,7 @@ app.use(cors({
 
 routes(app);
 
+// Start server on port 3000
 const server = app.listen(port, (error) => {
   if (error) return console.log(`Error: ${error}`);
 
