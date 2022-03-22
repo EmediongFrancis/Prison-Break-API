@@ -47,3 +47,25 @@ Prison Break API 🚨 is listening on port 3000
 You should be greeted with the Welcome Page:
 
 ![Landing Page](https://github.com/EmediongFrancis/Prison-Break-API/blob/main/frontend/images/LandingPage.png)
+
+
+## Usage
+
+The endpoints for this API are:
+* /api/characters
+* /api/episodes
+* /api/locations
+* /api/codes
+
+![Endpoints](https://github.com/EmediongFrancis/Prison-Break-API/blob/main/frontend/images/Endpoints.png)
+
+You can then query by id to isolate and manipulate further in your application. e.g: /api/episodes/5.
+
+![id Endpoints](https://github.com/EmediongFrancis/Prison-Break-API/blob/main/frontend/images/idEndpoints.png)
+
+## Related Projects
+* [Star Wars API](https://swapi.dev/)
+* [Final Space API](https://finalspaceapi.com)
+
+## Licensing
+This project is free and open-source and is licensed under the [BSD License](https://opensource.org/licenses/BSD-3-Clause).
